@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import { devToolsEnhancer } from 'redux-devtools-extension';
 
 const todos = (state = [], action) => {
   switch (action.type) {
@@ -26,7 +27,7 @@ const todos = (state = [], action) => {
   }
 };
 
-export const store = createStore(todos);
+export const store = createStore(todos, devToolsEnhancer);
 
 // action creators
 export const addTodo = (title) => ({
