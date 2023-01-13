@@ -1,13 +1,11 @@
-import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
-import { store } from "./store2/index";
+import { cofigureStore } from "./store";
+import {Root} from "./Root";
 
-import App from "./App";
+const store = cofigureStore();
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Root store={store} />,
   rootElement
 );
