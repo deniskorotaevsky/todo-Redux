@@ -12,17 +12,38 @@ export const TodoList = () => {
     return (
         <ul>
             {todos.map((todo) => (
-                <li key={todo.title}>
-                    <input
-                        type='checkbox'
-                        checked={todo.completed}
-                        onChange={() => dispatch(toggleTodo(todo.id))}
-                    />{' '}
-                    {todo.title}{' '}
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                    }}
+                >
+                    <li
+                        key={todo.title}
+                        style={{
+                            listStyleType: 'none',
+                        }}
+                    >
+                        <input
+                            type='checkbox'
+                            checked={todo.completed}
+                            onChange={() => dispatch(toggleTodo(todo.id))}
+                        />
+
+                        <div
+                            style={{
+                                marginLeft: '10px',
+                                marginTop: '-2px',
+                            }}
+                        >
+                            {todo.title}
+                        </div>
+                    </li>
                     <button onClick={() => dispatch(removeTodo(todo.id))}>
                         delete
                     </button>
-                </li>
+                </div>
             ))}
         </ul>
     );

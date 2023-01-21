@@ -9,24 +9,25 @@ const Filters = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 gap: '0.75rem',
+                marginTop: '10px',
             }}
         >
             <Link
                 to='/all'
-                style={{ color: activeFilter === 'all' ? 'red' : 'black' }}
+                style={{ color: activeFilter === 'all' ? 'green' : 'black' }}
             >
                 all
             </Link>
             <Link
                 to='/active'
-                style={{ color: activeFilter === 'active' ? 'red' : 'black' }}
+                style={{ color: activeFilter === 'active' ? 'green' : 'black' }}
             >
                 active
             </Link>
             <Link
                 to='/completed'
                 style={{
-                    color: activeFilter === 'completed' ? 'red' : 'black',
+                    color: activeFilter === 'completed' ? 'green' : 'black',
                 }}
             >
                 completed
